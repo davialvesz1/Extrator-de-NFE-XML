@@ -1,0 +1,150 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Corpo da página */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #F2F2F2; /* Cinza Claro */
+    color: #333;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Cabeçalho */
+  header {
+    background-color: #003366; /* Azul Escuro */
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    max-width: 1200px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+  }
+  
+  header h1 {
+    font-size: 32px;
+    font-weight: normal;
+  }
+  
+  /* Banner da Empresa */
+  .banner {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .banner-image {
+    width: 100%;
+    height: auto;
+    max-height: 200px; /* Ajuste a altura máxima conforme necessário */
+    object-fit: cover; /* Faz a imagem cobrir o espaço sem distorcer */
+    border-radius: 8px;
+  }
+  
+  /* Formulário */
+  form {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  input[type="file"] {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #F2F2F2;
+    border-radius: 5px;
+    border: 1px solid #DDD;
+  }
+  
+  button[type="submit"] {
+    background-color: #003366; /* Azul Escuro */
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #002244; /* Azul mais escuro */
+  }
+  
+  /* Tabela */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 14px;
+  }
+  
+  th {
+    background-color: #003366; /* Azul Escuro */
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-weight: normal;
+  }
+  
+  td {
+    background-color: #F9F9F9;
+    border-bottom: 1px solid #DDD;
+  }
+  
+  tr:hover td {
+    background-color: #E1F5E8; /* Azul Claro */
+  }
+  
+  /* Banner */
+  .banner h2 {
+    font-size: 28px;
+    color: #003366; /* Azul Escuro */
+    font-weight: normal;
+  }
+  .header-img {
+    max-width: 50%;
+    height: auto;
+  }
+
+  #downloadExcel {
+    background-color: #003d73;  /* azul CF predominante */
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 20px 0;
+    transition: all 0.3s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #downloadExcel:hover {
+    background-color: #002a52;
+    transform: scale(1.05);
+  }
+  

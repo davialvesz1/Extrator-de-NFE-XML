@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leitor de NFe - XML</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Banner -->
+  <header>
+    <img src="cfsmart.jpg" alt="CF Contabilidade" class="header-img">
+  </header>
+
+  <h2>Faça o Upload da NFe em XML</h2>
+  <br>
+  <form id="uploadForm">
+    <input type="file" id="file" accept=".xml" multiple required />
+    <button type="submit">Enviar</button>
+  </form>
+
+  <table id="resultTable">
+    <thead>
+      <tr>
+        <th>CNPJ/CPF Emitente</th>
+        <th>Nome Emitente</th>
+        <th>Data Emissão</th>
+        <th>CNPJ/CPF Destinatário</th>
+        <th>Nome Destinatário</th>
+        <th>Produto</th>
+        <th>Quantidade</th>
+        <th>Valor Unitário</th>
+        <th>PIS</th>
+        <th>COFINS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Resultados serão inseridos aqui -->
+    </tbody>
+  </table>
+
+  <!-- Botão fora da tabela -->
+  <button id="downloadExcel">Baixar em Excel</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="script.js"></script>
+  <br>
+</body>
+</html>
