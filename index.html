@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leitor de NFe - XML</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .table-wrapper {
+      overflow-x: auto;
+      overflow-y: auto;
+      width: 100%;
+      max-width: 100%;
+      max-height: 70vh;
+    }
+  </style>
 </head>
 <body>
 
@@ -20,27 +29,34 @@
     <button type="submit">Enviar</button>
   </form>
 
-  <table id="resultTable">
-    <thead>
-      <tr>
-        <th>CNPJ/CPF Emitente</th>
-        <th>Nome Emitente</th>
-        <th>Data Emissão</th>
-        <th>CNPJ/CPF Destinatário</th>
-        <th>Nome Destinatário</th>
-        <th>Produto</th>
-        <th>Quantidade</th>
-        <th>Valor Unitário</th>
-        <th>PIS</th>
-        <th>COFINS</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Resultados serão inseridos aqui -->
-    </tbody>
-  </table>
+  <div class="table-wrapper">
+    <table id="resultTable">
+      <thead>
+        <tr>
+          <th>Número NF</th>
+          <th>CNPJ/CPF Emitente</th>
+          <th>Nome Emitente</th>
+          <th>Data Emissão</th>
+          <th>CNPJ/CPF Destinatário</th>
+          <th>Nome Destinatário</th>
+          <th>Produto</th>
+          <th>Quantidade</th>
+          <th>Valor Unitário</th>
+          <th>PIS</th>
+          <th>COFINS</th>
+          <th>CFOP</th>
+          <th>CST</th>
+          <th>CST PIS</th>
+          <th>CST COFINS</th>
+          <th>NCM</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Resultados serão inseridos aqui -->
+      </tbody>
+    </table>
+  </div>
 
-  <!-- Botão fora da tabela -->
   <button id="downloadExcel">Baixar em Excel</button>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
