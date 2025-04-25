@@ -93,7 +93,6 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
         <td>R$ ${cofinsValor.toFixed(2)}</td>
         <td>${cstPIS}</td>
         <td>${cstCOFINS}</td>
-      ;
       
       `;
       tableBody.appendChild(row);
