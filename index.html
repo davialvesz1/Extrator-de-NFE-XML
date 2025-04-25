@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leitor de NFe - XML</title>
@@ -25,30 +26,44 @@
   <h2>Faça o Upload da NFe em XML</h2>
   <br>
   <form id="uploadForm">
-    <input type="file" id="file" accept=".xml" multiple required />
+    <input 
+      type="file" 
+      id="file" 
+      accept=".xml" 
+      multiple 
+      webkitdirectory 
+      directory 
+      required 
+    />
     <button type="submit">Enviar</button>
   </form>
+  
 
   <div class="table-wrapper">
     <table id="resultTable">
       <thead>
         <tr>
-          <th>Número NF</th>
-          <th>CNPJ/CPF Emitente</th>
-          <th>Nome Emitente</th>
-          <th>Data Emissão</th>
-          <th>CNPJ/CPF Destinatário</th>
-          <th>Nome Destinatário</th>
-          <th>Produto</th>
-          <th>Quantidade</th>
-          <th>Valor Unitário</th>
-          <th>PIS</th>
-          <th>COFINS</th>
-          <th>CFOP</th>
-          <th>CST</th>
-          <th>CST PIS</th>
-          <th>CST COFINS</th>
-          <th>NCM</th>
+          <thead>
+            <tr>
+              <th>Número NF</th>
+              <th>CNPJ/CPF Emitente</th>
+              <th>Nome Emitente</th>
+              <th>Data Emissão</th>
+              <th>CNPJ/CPF Destinatário</th>
+              <th>Nome Destinatário</th>
+              <th>Produto</th>
+              <th>NCM</th>
+              <th>CFOP</th>
+              <th>CST</th>
+              <th>Quantidade</th>
+              <th>Valor Unitário</th>
+              <th>PIS</th>
+              <th>COFINS</th>
+              <th>CST PIS</th>
+              <th>CST COFINS</th>
+            </tr>
+          </thead>
+          
         </tr>
       </thead>
       <tbody>
