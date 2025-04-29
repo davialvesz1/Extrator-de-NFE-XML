@@ -1,11 +1,17 @@
 document.getElementById('uploadForm').addEventListener('submit', async function(event) {
   event.preventDefault();
+
+  // Mostrar mensagem de carregamento
+  document.getElementById('loadingMessage').style.display = 'block';
+
   const files = document.getElementById('file').files;
   const tableBody = document.querySelector('#resultTable tbody');
   tableBody.innerHTML = '';
 
   if (!files.length) {
     alert("Nenhum arquivo selecionado.");
+    // Esconder mensagem caso erro
+    document.getElementById('loadingMessage').style.display = 'none';
     return;
   }
 
@@ -29,7 +35,6 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
     return xmlDoc;
   };
 
-  // Processador de XML
   const processXML = (xmlContent, fileName) => {
     const parser = new DOMParser();
     let xmlDoc = parser.parseFromString(xmlContent, "text/xml");
@@ -93,13 +98,11 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
         <td>R$ ${cofinsValor.toFixed(2)}</td>
         <td>${cstPIS}</td>
         <td>${cstCOFINS}</td>
-      
       `;
       tableBody.appendChild(row);
     });
   };
 
-  // Recursivo: extrai XMLs de qualquer .zip ou sub-zip
   const extractXMLsFromZip = async (zipObj) => {
     for (const filename of Object.keys(zipObj.files)) {
       const entry = zipObj.files[filename];
@@ -111,7 +114,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
       } else if (filename.endsWith('.zip')) {
         const nestedZipData = await entry.async("blob");
         const nestedZip = await JSZip.loadAsync(nestedZipData);
-        await extractXMLsFromZip(nestedZip); // recursão
+        await extractXMLsFromZip(nestedZip); // recursivo
       }
     }
   };
@@ -128,6 +131,9 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
       reader.readAsText(file);
     }
   }
+
+  // Quando terminar tudo, esconder a mensagem
+  document.getElementById('loadingMessage').style.display = 'none';
 });
 
 // Botão de download Excel
